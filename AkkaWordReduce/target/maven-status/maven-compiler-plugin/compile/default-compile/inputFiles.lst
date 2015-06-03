@@ -1,9 +1,0 @@
-/Users/Webonise/projects/codebases/AkkaWordReduce/src/main/java/org/ameya/messages/ReducedData.java
-/Users/Webonise/projects/codebases/AkkaWordReduce/src/main/java/org/ameya/messages/MapData.java
-/Users/Webonise/projects/codebases/AkkaWordReduce/src/main/java/org/ameya/messages/WordCount.java
-/Users/Webonise/projects/codebases/AkkaWordReduce/src/main/java/org/ameya/App.java
-/Users/Webonise/projects/codebases/AkkaWordReduce/src/main/java/org/ameya/actors/AggregateActor.java
-/Users/Webonise/projects/codebases/AkkaWordReduce/src/main/java/org/ameya/messages/Result.java
-/Users/Webonise/projects/codebases/AkkaWordReduce/src/main/java/org/ameya/actors/ReduceActor.java
-/Users/Webonise/projects/codebases/AkkaWordReduce/src/main/java/org/ameya/actors/MapActor.java
-/Users/Webonise/projects/codebases/AkkaWordReduce/src/main/java/org/ameya/actors/MasterActor.java
