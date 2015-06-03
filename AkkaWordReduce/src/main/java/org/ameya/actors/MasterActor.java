@@ -33,7 +33,7 @@ public class MasterActor extends UntypedActor {
 
         if(message instanceof String){
             //if a request has come to distill it then send it to the map actor
-            mapActor.tell(message,getSelf());
+                mapActor.tell(message,getSelf());
         }else if(message instanceof MapData){
             //if the Map data is recieved then send it to the Reduce ACtor
             reduceActor.tell(message,getSelf());
@@ -42,8 +42,13 @@ public class MasterActor extends UntypedActor {
             aggregateActor.tell(message,getSelf());
         }else if(message instanceof Result){
             //if it is a Result message forward it to agg actor
-            aggregateActor.forward(message,getContext());
-        }else{
+            aggregateActor.forward(message, getContext());
+        }else if(message instanceof  PoisonPill){
+            mapActor.tell(message,getSelf());
+            reduceActor.tell(message,getSelf());
+            aggregateActor.tell(message,getSelf());
+        }
+        else{
             unhandled(message);
         }
 

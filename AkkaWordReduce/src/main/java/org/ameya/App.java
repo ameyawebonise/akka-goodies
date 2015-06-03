@@ -2,6 +2,7 @@ package org.ameya;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.actor.PoisonPill;
 import akka.actor.Props;
 import akka.pattern.Patterns;
 import akka.util.Timeout;
@@ -35,10 +36,18 @@ public class App
 
         Future<Object> future = Patterns.ask(master,new Result(),to);
         String result = (String) Await.result(future, to.duration());
-
+        PoisonPill p =  new PoisonPill() {
+            @Override
+            public int hashCode() {
+                return super.hashCode();
+            }
+        };
 
         System.out.println(result);
-            system.shutdown();
+        //kill the actor bysending PoisonPill message
+        master.tell(akka.actor.PoisonPill.getInstance(),null);
+        //or by shutdown();
+        system.shutdown();
     }
 }
 

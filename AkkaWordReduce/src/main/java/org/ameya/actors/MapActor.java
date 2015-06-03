@@ -32,9 +32,9 @@ public class MapActor extends UntypedActor {
             //if yes then cast it to a String safely
 
             String workLoad = (String)message;
-            System.out.println("recieved");
-            //Inform the sender (in this case the master actor ) through a message that it expects(MapData) about the result of the computation
-            getSender().tell(mapWords(workLoad),getSelf());
+             //Inform the sender (in this case the master actor ) through a message that it expects(MapData) about the result of the computation
+            getSender().tell(mapWords(workLoad), getSelf());
+
         }
         else{
             //throw a exception saying that a message of any other type than String is not being able to be handled
