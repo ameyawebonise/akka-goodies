@@ -1,2 +1,0 @@
-# akka-goodies
-akka trials
