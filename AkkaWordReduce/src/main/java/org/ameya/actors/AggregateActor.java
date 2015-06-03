@@ -12,6 +12,17 @@ import java.util.Map;
  */
 public class AggregateActor  extends UntypedActor {
     private Map<String,Integer> aggregatedReducedMap =  new HashMap<String,Integer>();
+
+    @Override
+    public void preStart(){
+        System.out.println("pre start of Aggregate actor");
+    }
+
+
+    @Override
+    public void postStop(){
+        System.out.println("post stop of Aggreagate actor");
+    }
     @Override
     public void onReceive(Object message) throws  Exception{
 

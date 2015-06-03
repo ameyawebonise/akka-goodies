@@ -16,6 +16,16 @@ public class MapActor extends UntypedActor {
     final List<String> STOP_WORDS_LIST = Arrays.asList(STOP_WORDS);
 
     @Override
+    public void preStart(){
+        System.out.println("pre start of Map actor");
+    }
+
+
+    @Override
+    public void postStop(){
+        System.out.println("post stop of Map actor");
+    }
+    @Override
     public void onReceive(Object message) throws Exception {
         if(message instanceof String){
             //check whether the message is type of a string

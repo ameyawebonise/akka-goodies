@@ -17,6 +17,16 @@ public class MasterActor extends UntypedActor {
     final ActorRef reduceActor = getContext().actorOf(Props.create(ReduceActor.class), "reduce");
     final ActorRef aggregateActor = getContext().actorOf(Props.create(AggregateActor.class), "aggregate");
 
+    @Override
+    public void preStart(){
+        System.out.println("pre start of master actor");
+    }
+
+
+    @Override
+    public void postStop(){
+        System.out.println("post stop of master actor");
+    }
 
     @Override
     public void onReceive(Object message) throws  Exception{

@@ -36,7 +36,10 @@ public class App
         Future<Object> future = Patterns.ask(master,new Result(),to);
         String result = (String) Await.result(future, to.duration());
 
-        System.out.println(result);
 
+        System.out.println(result);
+            system.shutdown();
     }
 }
+
+

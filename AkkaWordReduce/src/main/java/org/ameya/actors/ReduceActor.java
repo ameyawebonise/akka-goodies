@@ -14,6 +14,17 @@ import java.util.Map;
  */
 public class ReduceActor extends UntypedActor {
 
+
+    @Override
+    public void preStart(){
+        System.out.println("pre start of Reduce actor");
+    }
+
+
+    @Override
+    public void postStop(){
+        System.out.println("post stop of Reduce actor");
+    }
     @Override
     public void onReceive(Object message) throws  Exception{
         if(message instanceof MapData){
