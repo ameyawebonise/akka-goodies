@@ -12,6 +12,7 @@
     <modules>
         <module>AkkaWordReduce</module>
         <module>PingPongProblem</module>
+        <module>AkkaHotSwap</module>
     </modules>
 
 </project>
