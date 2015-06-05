@@ -16,7 +16,7 @@ public class App {
         ActorSystem system = ActorSystem.create();
         ActorRef pingPongActor = system.actorOf(Props.create(PingPongActor.class));
         pingPongActor.tell(Messages.START,null);
-        Thread.sleep(5000);
+        Thread.sleep(10000);
 
         system.shutdown();
     }

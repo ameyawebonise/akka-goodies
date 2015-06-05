@@ -17,20 +17,21 @@ public class PingPongActor extends UntypedActor {
             String actualMessage = (String)message;
             if(message.equals((Messages.START))){
                 //become ping
-                System.out.println("Starting the game");
+                Thread.sleep(100);
+                play("Starting the game");
                 getSelf().tell(Messages.PING,getSelf());
             }
             else if(message.equals(Messages.PING)){
-                //become Pong till count is till 10
-                Thread.sleep(100);
-                System.out.println("PING");
+                Thread.sleep(500);
+                play("PING");
                 getSelf().tell(Messages.PONG,getSelf());
                 getContext().become(new Procedure<Object>() {
                     @Override
                     public void apply(Object message) throws Exception {
                         if(message instanceof  String){
                             if(((String) message).matches(Messages.PONG)){
-                                System.out.println("PONG");
+                                Thread.sleep(500);
+                                play("PONG");
                                 getSelf().tell(Messages.PING,getSelf());
                                 getContext().unbecome();
                             }
@@ -44,5 +45,9 @@ public class PingPongActor extends UntypedActor {
             }
         }
 
+    }
+
+    private void play(String turn){
+        System.out.println(turn);
     }
 }
