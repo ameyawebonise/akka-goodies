@@ -10,7 +10,6 @@ import org.ameya.actors.MasterActor;
 import org.ameya.messages.Result;
 import scala.concurrent.Await;
 import scala.concurrent.Future;
-import scala.concurrent.duration.Duration;
 import scala.concurrent.duration.FiniteDuration;
 
 import java.util.concurrent.TimeUnit;
