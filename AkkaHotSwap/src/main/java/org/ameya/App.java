@@ -18,6 +18,17 @@ public class App {
         pingPongActor.tell(Messages.START,null);
         Thread.sleep(10000);
 
+        //the following code is to see whether codacy flags the obvious issues in this block
+        String first = "first";
+        String second = "second";
+
+        if(first == second){
+            System.err.println("Something went wrong");
+        }
+        else{
+            System.out.println("Everything is fine in math land");
+        }
+
         system.shutdown();
     }
 
